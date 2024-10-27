@@ -1,0 +1,36 @@
+20:55:04 **** Build of configuration Debug for project 06_TIMER_BASE_100ms ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
+../Core/Src/main.c:17:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   17 | TIM_HandleTypeDef htimer3;
+      | ^~~~~~~~~~~~~~~~~
+      | DMA_HandleTypeDef
+../Core/Src/msp.c:27:27: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+   27 | void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htimer){
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           DMA_HandleTypeDef
+make: *** [Core/Src/subdir.mk:34: Core/Src/msp.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:26:2: warning: implicit declaration of function 'HAL_TIM_Base_Start' [-Wimplicit-function-declaration]
+   26 |  HAL_TIM_Base_Start(&htimer3);
+      |  ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'TIMER3_Init':
+../Core/Src/main.c:46:9: error: request for member 'Instance' in something not a structure or union
+   46 |  htimer3.Instance = TIM3;
+      |         ^
+../Core/Src/main.c:47:9: error: request for member 'Init' in something not a structure or union
+   47 |  htimer3.Init.Prescaler = 24;
+      |         ^
+../Core/Src/main.c:48:9: error: request for member 'Init' in something not a structure or union
+   48 |  htimer3.Init.Period = 64000-1;
+      |         ^
+../Core/Src/main.c:49:5: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+   49 |  if(HAL_TIM_Base_Init(&htimer3) != HAL_OK){
+      |     ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+20:55:05 Build Failed. 8 errors, 2 warnings. (took 924ms)
+

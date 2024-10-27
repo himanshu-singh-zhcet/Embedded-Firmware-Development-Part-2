@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;06_TIMER_BASE_100ms/Core/Src/main.c&apos;" deleteContents="false" description="Delete resource &apos;06_TIMER_BASE_100ms/Core/Src/main.c&apos;" element1="/06_TIMER_BASE_100ms/Core/Src/main.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1722752409419"/>&#x0A;<refactoring comment="Rename resource &apos;07_TIMER_BASE_10micro&apos; to &apos;08_TIMER_BASE_10micro&apos;" description="Rename resource &apos;07_TIMER_BASE_10micro&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/07_TIMER_BASE_10micro" name="08_TIMER_BASE_10micro" stamp="1722786609002" updateReferences="true"/>
+</session>
